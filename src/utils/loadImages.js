@@ -10,6 +10,11 @@ import IconReactjs from "../assets/icons/IconReactjs.svg";
 import IconSass from "../assets/icons/IconSass.svg";
 import IconVuejs from "../assets/icons/IconVuejs.svg";
 
+import youtube from "../assets/images/sections/projects/cloneyoutube.png";
+import fractals from "../assets/images/sections/projects/fractals.png";
+import giphy from "../assets/images/sections/projects/gifexpert.png";
+import pokeapi from "../assets/images/sections/projects/pokeapi.png";
+
 console.log(IconBootstrap);
 
 export function loadImages(filter) {
@@ -67,4 +72,15 @@ export function loadImages(filter) {
   };
 
   return images[filter];
+}
+
+export function loadProjects() {
+  const projects = [
+    { name: "youtube", url: youtube },
+    { name: "fractals", url: fractals },
+    { name: "giphy", url: giphy },
+    { name: "pokeapi", url: pokeapi },
+  ];
+
+  return projects;
 }

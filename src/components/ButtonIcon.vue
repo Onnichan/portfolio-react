@@ -1,22 +1,40 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  download: {
+    type: String,
+    required: false,
+  },
+  name: {
+    type: String,
+    required: false,
+  },
+});
+</script>
 
 <template>
-  <button class="button__wrapper">
+  <a class="button__wrapper" :href="props.download" :download="props.name">
     <div class="button__icon">
       <slot name="icon"></slot>
     </div>
     <div class="button__content">
       <slot name="text"></slot>
     </div>
-  </button>
+  </a>
 </template>
 
 <style scoped>
-.button__wrapper {
-  display: flex;
-  border-radius: 4px;
+.button__wrapper,
+.button__wrapper:link {
   outline: none;
+  text-decoration: none;
+}
+.button__wrapper {
+  display: block;
+  border-radius: 4px;
   padding: 10px 10px 10px 40px;
+  background-color: antiquewhite;
+  color: black;
+  width: 150px;
 }
 
 .button__content {

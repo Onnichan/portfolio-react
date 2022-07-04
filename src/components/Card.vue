@@ -4,25 +4,31 @@ const props = defineProps({
     type: String,
     required: false,
   },
-  images: {
-    type: Function,
+  data: {
+    type: Object,
     required: false,
   },
-  body: {},
 });
-
-// function showImages(filter) {
-//   return Object.keys(props.images()).find(key =>
-//     key === filter ? props.images()[key] : undefined
-//   );
-// }
 </script>
 
 <template>
   <div class="card">
-    <span class="card__title"></span>
-    <div class="card__body"></div>
+    <span class="card__title" v-show="title">{{ title }}</span>
+    <div class="card__body">
+      <img :src="props.data.url" class="card__media" alt="" />
+    </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.card,
+.card__body {
+  width: 100%;
+}
+.card__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>

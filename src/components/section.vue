@@ -1,9 +1,11 @@
 <script setup>
 import aboutImage from "../assets/images/sections/about/areawork.png";
-import { loadImages } from "../utils/loadImages";
+import { loadImages, loadProjects } from "../utils/loadImages";
 import ButtonIcon from "./ButtonIcon.vue";
 import iconDonwload from "../assets/icons/IconDownload.svg";
+import cvpdf from "../assets/CV.pdf";
 import Box from "./Box.vue";
+import Grid from "./Grid.vue";
 
 const props = defineProps({
   type: {
@@ -73,7 +75,10 @@ const props = defineProps({
 
           Greetings 👋 <br />
         </p>
-        <ButtonIcon>
+        <ButtonIcon
+          :download="cvpdf"
+          name="CV - WALTER DANIEL HUAYNAPATA AGUILAR"
+        >
           <template #icon>
             <img :src="iconDonwload" class="button__icon" alt="icon download" />
           </template>
@@ -101,7 +106,10 @@ const props = defineProps({
     :id="props.id"
     :class="props.class"
     v-else-if="props.type === 'projects'"
-  ></section>
+  >
+    <h3 class="section__title">My projects</h3>
+    <Grid :data="loadProjects"></Grid>
+  </section>
   <section
     :id="props.id"
     :class="props.class"
@@ -111,7 +119,7 @@ const props = defineProps({
 
 <style scoped>
 .section {
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
 .section__paragraph {
@@ -124,6 +132,7 @@ const props = defineProps({
   text-align: center;
   font-weight: 700;
   font-size: 3em;
+  margin-bottom: 60px;
 }
 
 .section__body {
@@ -136,10 +145,10 @@ const props = defineProps({
 }
 
 .section__body--skills {
+  flex-direction: column;
 }
 .body__title {
   font-size: 4rem;
-  /* display: block; */
   font-weight: 800;
   position: relative;
   /* color: black; */
@@ -155,7 +164,6 @@ const props = defineProps({
   position: absolute;
   /* inset: 0; */
   font-size: 4rem;
-  /* display: block; */
   font-weight: 800;
   background-clip: text;
   -webkit-background-clip: text;
@@ -167,11 +175,6 @@ const props = defineProps({
 .body__content {
   width: 50%;
 }
-
-/* .body__image {
-  width: 50%;
-} */
-
 .button__icon {
   height: 100%;
   width: 100%;
@@ -187,6 +190,15 @@ const props = defineProps({
   33.333%,
   83.333% {
     opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .body__content {
+    width: 100%;
+  }
+  .body__image {
+    display: none;
   }
 }
 </style>

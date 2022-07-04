@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 <template>
   <header class="header">
     <RouterLink to="/" class="heaader__logo">
-      <img :src="logo" alt="logo description for me" height="50" />
+      <img :src="logo" alt="logo description for me" height="30" />
     </RouterLink>
     <nav class="header__nav">
       <ul class="nav__ul">
@@ -25,8 +25,18 @@ import logo from "../assets/logo.png";
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2em var(--pd-container);
+  padding: 1em var(--pd-container);
   color: #545454;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  /* webkit-backdrop-filter: saturate(180%) blur(5px); */
+  backdrop-filter: saturate(180%) blur(5px);
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  box-shadow: inset 0 -1px 0 0 hsla(0, 0%, 100%, 0.1);
+  transition: box-shadow 0.2s ease 0s, background-color 0.2s ease 0s;
 }
 
 .header__nav {
@@ -47,14 +57,15 @@ import logo from "../assets/logo.png";
   text-decoration: none;
   /* margin-left: 2em; */
   color: #545454;
-  font-size: 1.2em;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .nav__li:hover {
   color: white;
 }
 
-.router-link-active {
+.nav__li:active {
   color: white;
 }
 </style>
