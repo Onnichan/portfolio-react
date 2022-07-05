@@ -39,9 +39,6 @@ import logo from "../assets/logo.png";
   transition: box-shadow 0.2s ease 0s, background-color 0.2s ease 0s;
 }
 
-.header__nav {
-}
-
 .nav__ul {
   list-style: none;
   display: flex;
@@ -65,7 +62,7 @@ import logo from "../assets/logo.png";
   color: white;
 }
 
-.nav__li:active {
+/* .nav__li:active {
   color: white;
-}
+} */
 </style>

@@ -1,4 +1,7 @@
 <script setup>
+import iconExternalLink from "../assets/icons/IconExternalLink.svg";
+import iconGithub from "../assets/icons/iconGithub.svg";
+
 const props = defineProps({
   title: {
     type: String,
@@ -13,9 +16,19 @@ const props = defineProps({
 
 <template>
   <div class="card">
-    <span class="card__title" v-show="title">{{ title }}</span>
     <div class="card__body">
       <img :src="props.data.url" class="card__media" alt="" />
+      <div class="card__options">
+        <a :href="props.data.web" class="card__link">
+          <img :src="iconExternalLink" alt="" class="card__icons" />
+          <!-- <span>web</span> -->
+        </a>
+        <a :href="props.data.github" class="card__link">
+          <img :src="iconGithub" alt="" class="card__icons" />
+          <!-- <span>repo</span> -->
+        </a>
+      </div>
+      <span class="card__title">{{ props.data.name }}</span>
     </div>
   </div>
 </template>
@@ -23,12 +36,76 @@ const props = defineProps({
 <style scoped>
 .card,
 .card__body {
+  position: relative;
   width: 100%;
+  height: 100%;
+  /* border-radius: 4px; */
 }
+
+.card__body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  cursor: pointer;
+  transition: background-color 1s ease-in-out;
+}
+.card__body:hover::after {
+  background-color: rgba(0, 0, 0, 0.466);
+}
+
 .card__media {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 5px;
+}
+
+.card__link {
+  display: block;
+}
+
+.card__options {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.564);
+  backdrop-filter: saturate(180%) blur(5px);
+  width: 50px;
+  /* height: 100px; */
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  /* display: none; */
+}
+
+.card__icons {
+  display: block;
+  width: 60%;
+  margin: 4px auto;
+  color: white;
+  z-index: 10;
+}
+
+.card__title {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 10;
+  /* background-color: rgba(66, 42, 38, 0.237); */
+  /* background-color: rgb(0, 0, 0); */
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: 800;
+  font-family: sans-serif;
 }
 </style>

@@ -1,6 +1,6 @@
 <script setup>
 import aboutImage from "../assets/images/sections/about/areawork.png";
-import { loadImages, loadProjects } from "../utils/loadImages";
+import { loadImages, loadProjects, socialIcons } from "../utils/loadImages";
 import ButtonIcon from "./ButtonIcon.vue";
 import iconDonwload from "../assets/icons/IconDownload.svg";
 import cvpdf from "../assets/CV.pdf";
@@ -67,23 +67,46 @@ const props = defineProps({
           from Peru and I like the design and combinate colors, apply designs
           and practice all time. <br />
 
-          I consider very curious, proactive, puntual and responsable without
-          the focus. <br />
+          I consider myself very curious, proactive, punctual and responsible
+          without letting lose focus. <br />
 
-          I don't wait to learn new technologies and get new experiences 😁
+          I never stop learning new technologies and get new experiences 😁
           <br />
 
-          Greetings 👋 <br />
+          Greetings 👋 <br /><br />
         </p>
-        <ButtonIcon
-          :download="cvpdf"
-          name="CV - WALTER DANIEL HUAYNAPATA AGUILAR"
-        >
-          <template #icon>
-            <img :src="iconDonwload" class="button__icon" alt="icon download" />
-          </template>
-          <template #text> Download CV </template>
-        </ButtonIcon>
+        <div class="section__options">
+          <div class="social-network">
+            <a
+              :href="item.url"
+              v-for="item in socialIcons()"
+              :key="item.name"
+              target="_blank"
+              class="social-link"
+            >
+              <img
+                :src="item.value"
+                class="social-icon"
+                alt=""
+                :title="item.name"
+              />
+            </a>
+          </div>
+          <br />
+          <ButtonIcon
+            :download="cvpdf"
+            name="CV - WALTER DANIEL HUAYNAPATA AGUILAR"
+          >
+            <template #icon>
+              <img
+                :src="iconDonwload"
+                class="button__icon"
+                alt="icon download"
+              />
+            </template>
+            <template #text> Download CV </template>
+          </ButtonIcon>
+        </div>
       </div>
       <div class="body__image">
         <img :src="aboutImage" alt="" />
@@ -114,12 +137,19 @@ const props = defineProps({
     :id="props.id"
     :class="props.class"
     v-else-if="props.type === 'contact'"
-  ></section>
+  >
+    <h3 class="section__title">Contact</h3>
+  </section>
 </template>
 
 <style scoped>
-.section {
+.section:not(.section:last-child) {
   padding: 6rem 0;
+}
+
+.section:nth-child(2) {
+  /* background-color: rgba(15, 26, 26, 0.236); */
+  /* margin: 0 calc(var(--pd-container)*-1); */
 }
 
 .section__paragraph {
@@ -142,6 +172,35 @@ const props = defineProps({
 .section__body--about {
   align-items: center;
   justify-content: space-between;
+}
+
+.section__options {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.social-network {
+  display: flex;
+}
+.social-icon {
+  display: block;
+  width: 30px;
+  height: 100%;
+}
+
+/* .social-icon::-ms-tooltip{
+  background-color: red;
+} */
+
+.social-link {
+  /* display: block; */
+  height: 100%;
+}
+
+.social-link:nth-child(2) {
+  background-color: black;
+  margin-left: 10px;
+  border-radius: 4px;
 }
 
 .section__body--skills {
