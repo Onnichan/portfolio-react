@@ -137,7 +137,7 @@ export function loadProjects() {
       name: "Portfolio",
       url: portfolio,
       github: "https://github.com/Onnichan/portfolio-vue",
-      web: "https://onnichan.github.io/pokeapi-react/",
+      web: "https://onnichan.github.io/portfolio-vue/",
     },
   ];
 
