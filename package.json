@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "pinia": "^2.0.14",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
+    "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "2.7.1",
