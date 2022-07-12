@@ -14,7 +14,7 @@ import Section from "../components/Section.vue";
     </svg> -->
     <Section id="skills" class="section" type="skills"> </Section>
     <Section id="projects" class="section" type="projects"> </Section>
-    <Section id="contact" class="section" type="contact"> </Section>
+    <!-- <Section id="contact" class="section" type="contact"> </Section> -->
   </main>
   <Footer class="footer"></Footer>
 </template>

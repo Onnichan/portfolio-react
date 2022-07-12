@@ -6,7 +6,7 @@
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "prepare": "husky install",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "pinia": "^2.0.14",

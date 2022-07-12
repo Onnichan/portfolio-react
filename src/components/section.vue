@@ -133,23 +133,18 @@ const props = defineProps({
     <h3 class="section__title">My projects</h3>
     <Grid :data="loadProjects"></Grid>
   </section>
-  <section
+  <!-- <section
     :id="props.id"
     :class="props.class"
     v-else-if="props.type === 'contact'"
   >
     <h3 class="section__title">Contact</h3>
-  </section>
+  </section> -->
 </template>
 
 <style scoped>
-.section:not(.section:last-child) {
+.section {
   padding: 6rem 0;
-}
-
-.section:nth-child(2) {
-  /* background-color: rgba(15, 26, 26, 0.236); */
-  /* margin: 0 calc(var(--pd-container)*-1); */
 }
 
 .section__paragraph {
@@ -161,7 +156,7 @@ const props = defineProps({
 .section__title {
   text-align: center;
   font-weight: 700;
-  font-size: 3em;
+  font-size: 2.5em;
   margin-bottom: 60px;
 }
 
