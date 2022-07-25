@@ -1,6 +1,6 @@
 <script setup>
 import iconExternalLink from "../assets/icons/IconExternalLink.svg";
-import iconGithub from "../assets/icons/iconGithub.svg";
+import iconGithub from "../assets/icons/IconGithub.svg";
 
 const props = defineProps({
   title: {
