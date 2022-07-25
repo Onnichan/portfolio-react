@@ -28,31 +28,31 @@ export function loadImages(filter) {
   const images = {
     frontend: [
       {
-        name: "html5",
+        name: "Html5",
         value: IconHtml5,
       },
       {
-        name: "css3",
+        name: "Css3",
         value: IconCss3,
       },
       {
-        name: "javascript",
+        name: "Javascript",
         value: IconJs,
       },
       {
-        name: "bootstrap",
+        name: "Bootstrap",
         value: IconBootstrap,
       },
       {
-        name: "react",
+        name: "ReactJS",
         value: IconReactjs,
       },
       {
-        name: "sass",
+        name: "Sass",
         value: IconSass,
       },
       {
-        name: "vue",
+        name: "Vue",
         value: IconVuejs,
       },
     ],
@@ -62,33 +62,33 @@ export function loadImages(filter) {
         value: IconPhp,
       },
       {
-        name: "nodejs",
+        name: "Nodejs",
         value: IconNodejs,
       },
       {
-        name: "expressjs",
+        name: "ExpressJS",
         value: IconExpress,
       },
       {
-        name: "mysql",
+        name: "Mysql",
         value: IconMysql,
       },
       {
-        name: "sequelize",
+        name: "Sequelize",
         value: IconSequelize,
       },
     ],
     tools: [
       {
-        name: "git",
+        name: "Git",
         value: IconGit,
       },
       {
-        name: "github",
+        name: "Github",
         value: IconGithub,
       },
       {
-        name: "vscode",
+        name: "VSCode",
         value: IconVscode,
       },
     ],
@@ -124,7 +124,7 @@ export function loadProjects() {
     {
       name: "Giphy app",
       url: giphy,
-      github: "https://github.com/Onnichan/pokeapi-react",
+      github: "https://github.com/Onnichan/react-giftApi",
       web: "https://onnichan.github.io/react-giftApi/",
     },
     {
