@@ -133,13 +133,6 @@ const props = defineProps({
     <h3 class="section__title">My projects</h3>
     <Grid :data="loadProjects"></Grid>
   </section>
-  <!-- <section
-    :id="props.id"
-    :class="props.class"
-    v-else-if="props.type === 'contact'"
-  >
-    <h3 class="section__title">Contact</h3>
-  </section> -->
 </template>
 
 <style scoped>
