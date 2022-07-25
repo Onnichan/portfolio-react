@@ -147,10 +147,10 @@ const props = defineProps({
   padding: 6rem 0;
 }
 
-.section:nth-child(2) {
-  /* background-color: rgba(15, 26, 26, 0.236); */
-  /* margin: 0 calc(var(--pd-container)*-1); */
-}
+/* .section:nth-child(2) {
+  background-color: rgba(15, 26, 26, 0.236);
+  margin: 0 calc(var(--pd-container)*-1);
+} */
 
 .section__paragraph {
   margin-top: 5em;
