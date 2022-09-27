@@ -21,6 +21,8 @@ import fractals from "../assets/images/sections/projects/fractals.png";
 import giphy from "../assets/images/sections/projects/gifexpert.png";
 import pokeapi from "../assets/images/sections/projects/pokeapi.png";
 import portfolio from "../assets/images/sections/projects/portfolio.png";
+import mundoMascotas from "../assets/images/sections/projects/Mundo mascotas.png";
+import sutdioGhibli from "../assets/images/sections/projects/studio ghibli.png";
 
 console.log(IconBootstrap);
 
@@ -138,6 +140,18 @@ export function loadProjects() {
       url: portfolio,
       github: "https://github.com/Onnichan/portfolio-vue",
       web: "https://onnichan.github.io/portfolio-vue/",
+    },
+    {
+      name: "Studio Ghibli app",
+      url: sutdioGhibli,
+      github: "https://github.com/Onnichan/challenges-giblin-myper",
+      web: "https://challenges-giblin-myper.vercel.app/",
+    },
+    {
+      name: "Ecommerce Mundo Mascotas",
+      url: mundoMascotas,
+      github: "https://github.com/No-Country/c6-28-vue-node",
+      web: "https://radiant-brushlands-22902.herokuapp.com/",
     },
   ];
 
