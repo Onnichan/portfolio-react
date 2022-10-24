@@ -23,6 +23,7 @@ import pokeapi from "../assets/images/sections/projects/pokeapi.png";
 import portfolio from "../assets/images/sections/projects/portfolio.png";
 import mundoMascotas from "../assets/images/sections/projects/Mundo mascotas.png";
 import sutdioGhibli from "../assets/images/sections/projects/studio ghibli.png";
+import condominio from "../assets/images/sections/projects/condominio.png";
 
 console.log(IconBootstrap);
 
@@ -152,6 +153,12 @@ export function loadProjects() {
       url: mundoMascotas,
       github: "https://github.com/No-Country/c6-28-vue-node",
       web: "https://radiant-brushlands-22902.herokuapp.com/",
+    },
+    {
+      name: "Condominios",
+      url: condominio,
+      github: "https://github.com/No-Country/s4-12-t-node-vue",
+      web: "https://sac-nocountry.herokuapp.com/",
     },
   ];
 
